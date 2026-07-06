@@ -17,4 +17,8 @@ function calcular() {
     let interesSimple=calcualarInteresSimple(moto,plazo,anio)
     let cmpInteresSimple=document.getElementById("spnInteresPagar")
     cmpInteresSimple.textContent=interesSimple;
+
+    let total=calcualrTotalPagar(moto,interesSimple)
+    let cmpTotal=document.getElementById("spnTotalPrestamo")
+    cmpTotal.textContent=total;
 }
