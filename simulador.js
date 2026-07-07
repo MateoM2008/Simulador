@@ -25,4 +25,14 @@ function calcular() {
     let cuotaMensual=calcularCuotaMensual(total,plazo)
     let cmpCuotaMensual=document.getElementById("spnCuotaMensual")
     cmpCuotaMensual.textContent=cuotaMensual;
+
+    let creditoAprobado=aprobarCredito(capacidadPago,cuotaMensual)
+    if(creditoAprobado==true){
+        let cmpEstadoCredito=document.getElementById("spnEstadoCredito")
+        cmpEstadoCredito.textContent="CREDITO APROBADO";
+    }else{
+       let cmpEstadoCredito=document.getElementById("spnEstadoCredito")
+        cmpEstadoCredito.textContent="CREDITO RECHAZADO"; 
+    }
+    
 }
