@@ -14,3 +14,8 @@ function calcualarInteresSimple(monto, taza, plazoAnios) {
 function calcualrTotalPagar(monto, interes) {
     return monto + interes + 100;
 }
+
+function calcularCuotaMensual(total, plazoAnios) {
+    let mensual= total /(plazoAnios*12);
+    return mensual.toFixed(2);
+}

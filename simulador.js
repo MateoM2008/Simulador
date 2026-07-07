@@ -21,4 +21,8 @@ function calcular() {
     let total=calcualrTotalPagar(moto,interesSimple)
     let cmpTotal=document.getElementById("spnTotalPrestamo")
     cmpTotal.textContent=total;
+
+    let cuotaMensual=calcularCuotaMensual(total,plazo)
+    let cmpCuotaMensual=document.getElementById("spnCuotaMensual")
+    cmpCuotaMensual.textContent=cuotaMensual;
 }
