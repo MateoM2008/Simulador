@@ -1,70 +1,299 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    margin: 0;
-    padding: 0;
+/* ===========================
+   RESET
+=========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.container {
-    width: 400px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+/* ===========================
+   BODY
+=========================== */
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:25px;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
+/* ===========================
+   CONTENEDOR
+=========================== */
+
+.container{
+
+    width:100%;
+    max-width:550px;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.25);
+
 }
 
-h2 {
-    margin-top: 20px;
-    font-size: 18px;
+/* ===========================
+   TITULOS
+=========================== */
+
+h1{
+
+    text-align:center;
+
+    color:#0f172a;
+
+    margin-bottom:25px;
+
+    font-size:2rem;
 }
 
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
+h2{
+
+    color:#2563eb;
+
+    margin-top:25px;
+    margin-bottom:12px;
+
+    font-size:1.25rem;
 }
 
-input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+/* ===========================
+   LABEL
+=========================== */
+
+label{
+
+    display:block;
+
+    margin-top:15px;
+
+    margin-bottom:5px;
+
+    font-weight:bold;
+
+    color:#334155;
 }
 
-p {
-    margin-top: 10px;
+/* ===========================
+   INPUT
+=========================== */
+
+input{
+
+    width:100%;
+
+    padding:13px;
+
+    border-radius:10px;
+
+    border:2px solid #dbeafe;
+
+    outline:none;
+
+    transition:.3s;
+
+    font-size:16px;
 }
 
-span {
-    font-weight: bold;
-    color: #2c3e50;
+input:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 8px rgba(37,99,235,.35);
+
 }
 
-.buttons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
+/* ===========================
+   RESULTADOS
+=========================== */
+
+p{
+
+    margin-top:14px;
+
+    font-size:16px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    flex-wrap:wrap;
 }
 
-button {
-    width: 48%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+span{
+
+    font-weight:bold;
+
+    color:#2563eb;
 }
 
-button:hover {
-    background-color: #2980b9;
+/* ===========================
+   BOTONES
+=========================== */
+
+.buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:30px;
+}
+
+button{
+
+    flex:1;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    color:white;
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    transition:.3s;
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 8px 18px rgba(37,99,235,.4);
+
+}
+
+/* ===========================
+   TABLETS
+=========================== */
+
+@media (max-width:768px){
+
+.container{
+
+    padding:28px;
+}
+
+h1{
+
+    font-size:1.8rem;
+}
+
+}
+
+/* ===========================
+   CELULARES
+=========================== */
+
+@media (max-width:600px){
+
+.container{
+
+    padding:22px;
+}
+
+h1{
+
+    font-size:1.6rem;
+}
+
+h2{
+
+    font-size:1.1rem;
+}
+
+label{
+
+    font-size:15px;
+}
+
+input{
+
+    font-size:15px;
+
+    padding:12px;
+}
+
+p{
+
+    flex-direction:column;
+
+    gap:4px;
+
+    font-size:15px;
+}
+
+.buttons{
+
+    flex-direction:column;
+}
+
+button{
+
+    width:100%;
+}
+
+}
+
+/* ===========================
+   CELULARES PEQUEÑOS
+=========================== */
+
+@media (max-width:380px){
+
+.container{
+
+    padding:18px;
+}
+
+h1{
+
+    font-size:1.35rem;
+}
+
+h2{
+
+    font-size:1rem;
+}
+
+label{
+
+    font-size:14px;
+}
+
+input{
+
+    padding:10px;
+}
+
+button{
+
+    padding:12px;
+
+    font-size:15px;
+}
+
 }
