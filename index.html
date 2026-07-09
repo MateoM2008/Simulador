@@ -18,213 +18,92 @@
 
 <body>
 
-<div class="bg-top"></div>
-<div class="bg-bottom"></div>
+    <div class="bg-top"></div>
+    <div class="bg-bottom"></div>
 
-<div class="container">
+    <div class="container">
 
-    <!--==================================
+        <!--==================================
                 ENCABEZADO
     ===================================-->
 
-    <header class="header">
+        <header class="header">
 
-        <img
-            src="entidadFinanciera.jpg"
-            alt="Logo Financiera"
-            class="logo">
+            <img src="entidadFinanciera.jpg" alt="Logo Financiera" class="logo">
 
-        <h1 class="tituloPrincipal">
+            <h1 class="tituloPrincipal">
 
-            Simulador de Crédito
+                Simulador de Crédito
 
-        </h1>
+            </h1>
 
-        <p class="subtitulo">
+            <p class="subtitulo">
 
-            Tu futuro financiero comienza aquí
+                Tu futuro financiero comienza aquí
 
-        </p>
+            </p>
 
-    </header>
+        </header>
 
-    <!--==================================
+        <!--==================================
             DATOS FINANCIEROS
     ===================================-->
 
-    <section class="card">
-
-        <div class="card-header azul">
-
-            <div class="icono">
-
-                📈
-
-            </div>
-
-            <h2>
-
-                Datos Financieros
-
-            </h2>
-
-        </div>
-
-        <div class="grid">
-
-            <div class="campo">
-
-                <label for="txtIngresos">
-
-                    Ingresos
-
-                </label>
-
-                <input
-                    type="text"
-                    id="txtIngresos"
-                    placeholder="Ingrese sus ingresos">
-
-            </div>
-
-            <div class="campo">
-
-                <label for="txtEgresos">
-
-                    Egresos
-
-                </label>
-
-                <input
-                    type="text"
-                    id="txtEgresos"
-                    placeholder="Ingrese sus egresos">
-
-            </div>
-
-        </div>
-
-        <div class="cardsResultados">
-
-            <div class="miniCard">
-
-                <div class="miniIcon">
-
-                    💵
-
-                </div>
-
-                <div>
-
-                    <small>
-
-                        Disponible
-
-                    </small>
-
-                    <h3 id="spnDisponible"></h3>
-
-                </div>
-
-            </div>
-
-            <div class="miniCard">
-
-                <div class="miniIcon">
-
-                    📊
-
-                </div>
-
-                <div>
-
-                    <small>
-
-                        Capacidad de pago mensual
-
-                    </small>
-
-                    <h3 id="spnCapacidadPago"></h3>
-
-                </div>
-
-            </div>
-
-        </div>
-                <!--==================================
-            SOLICITUD DE CRÉDITO
-        ===================================-->
-
         <section class="card">
 
-            <div class="card-header verde">
+            <div class="card-header azul">
 
                 <div class="icono">
 
-                    💳
+                    📈
 
                 </div>
 
                 <h2>
 
-                    Solicitud de Crédito
+                    Datos Financieros
 
                 </h2>
 
             </div>
 
-            <div class="campo">
+            <div class="grid">
 
-                <label for="txtMonto">
+                <div class="campo">
 
-                    Monto solicitado
+                    <label for="txtIngresos">
 
-                </label>
+                        Ingresos
 
-                <input
-                    type="text"
-                    id="txtMonto"
-                    placeholder="Ingrese el monto solicitado">
+                    </label>
 
-            </div>
+                    <input type="text" id="txtIngresos" placeholder="Ingrese sus ingresos" onblur="validarIngresos()">
+                    <small id="errorIngresos" class="mensajeError"></small>
 
-            <div class="campo">
+                </div>
 
-                <label for="txtPlazo">
+                <div class="campo">
 
-                    Plazo en años
+                    <label for="txtEgresos">
 
-                </label>
+                        Egresos
 
-                <input
-                    type="text"
-                    id="txtPlazo"
-                    placeholder="Ingrese el plazo">
+                    </label>
 
-            </div>
+                    <input type="text" id="txtEgresos" placeholder="Ingrese sus egresos" onblur="validarEgresos()">
+                    <small id="errorEgresos" class="mensajeError"></small>
 
-            <div class="campo">
-
-                <label for="txtTasaInteres">
-
-                    Tasa de interés (%)
-
-                </label>
-
-                <input
-                    type="text"
-                    id="txtTasaInteres"
-                    placeholder="Ingrese la tasa de interés">
+                </div>
 
             </div>
 
-            <div class="cardsResultados cuatro">
+            <div class="cardsResultados">
 
                 <div class="miniCard">
 
                     <div class="miniIcon">
 
-                        💰
+                        💵
 
                     </div>
 
@@ -232,11 +111,11 @@
 
                         <small>
 
-                            Interés a pagar
+                            Disponible
 
                         </small>
 
-                        <h3 id="spnInteresPagar"></h3>
+                        <h3 id="spnDisponible"></h3>
 
                     </div>
 
@@ -246,7 +125,7 @@
 
                     <div class="miniIcon">
 
-                        🏦
+                        📊
 
                     </div>
 
@@ -254,252 +133,356 @@
 
                         <small>
 
-                            Total préstamo
+                            Capacidad de pago mensual
 
                         </small>
 
-                        <h3 id="spnTotalPrestamo"></h3>
-
-                    </div>
-
-                </div>
-
-                <div class="miniCard">
-
-                    <div class="miniIcon">
-
-                        📅
-
-                    </div>
-
-                    <div>
-
-                        <small>
-
-                            Cuota mensual
-
-                        </small>
-
-                        <h3 id="spnCuotaMensual"></h3>
-
-                    </div>
-
-                </div>
-
-                <div class="miniCard estadoCredito">
-
-                    <div class="miniIcon">
-
-                        🛡️
-
-                    </div>
-
-                    <div>
-
-                        <small>
-
-                            Estado del crédito
-
-                        </small>
-
-                        <h3 id="spnEstadoCredito">
-
-                            ANALIZANDO...
-
-                        </h3>
+                        <h3 id="spnCapacidadPago"></h3>
 
                     </div>
 
                 </div>
 
             </div>
+            <!--==================================
+            SOLICITUD DE CRÉDITO
+        ===================================-->
 
-        </section>
+            <section class="card">
+
+                <div class="card-header verde">
+
+                    <div class="icono">
+
+                        💳
+
+                    </div>
+
+                    <h2>
+
+                        Solicitud de Crédito
+
+                    </h2>
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="txtMonto">
+
+                        Monto solicitado
+
+                    </label>
+
+                    <input type="text" id="txtMonto" placeholder="Ingrese el monto solicitado" onblur="validarMonto()">
+                    <small id="errorMonto" class="mensajeError"></small>
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="txtPlazo">
+
+                        Plazo en años
+
+                    </label>
+
+                    <input type="text" id="txtPlazo" placeholder="Ingrese el plazo" onblur="validarPlazo()">
+                    <small id="errorPlazo" class="mensajeError"></small>
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="txtTasaInteres">
+
+                        Tasa de interés (%)
+
+                    </label>
+
+                    <input type="text" id="txtTasaInteres" placeholder="Ingrese la tasa de interés"
+                        onblur="validarTasa()">
+                    <small id="errorTasa" class="mensajeError"></small>
+
+                </div>
+
+                <div class="cardsResultados cuatro">
+
+                    <div class="miniCard">
+
+                        <div class="miniIcon">
+
+                            💰
+
+                        </div>
+
+                        <div>
+
+                            <small>
+
+                                Interés a pagar
+
+                            </small>
+
+                            <h3 id="spnInteresPagar"></h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="miniCard">
+
+                        <div class="miniIcon">
+
+                            🏦
+
+                        </div>
+
+                        <div>
+
+                            <small>
+
+                                Total préstamo
+
+                            </small>
+
+                            <h3 id="spnTotalPrestamo"></h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="miniCard">
+
+                        <div class="miniIcon">
+
+                            📅
+
+                        </div>
+
+                        <div>
+
+                            <small>
+
+                                Cuota mensual
+
+                            </small>
+
+                            <h3 id="spnCuotaMensual"></h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="miniCard estadoCredito">
+
+                        <div class="miniIcon">
+
+                            🛡️
+
+                        </div>
+
+                        <div>
+
+                            <small>
+
+                                Estado del crédito
+
+                            </small>
+
+                            <h3 id="spnEstadoCredito">
+
+                                ANALIZANDO...
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
             <!--==================================
             PANEL INFORMATIVO
     ===================================-->
 
-    <section class="infoPanel">
+            <section class="infoPanel">
 
-        <div class="infoCard">
+                <div class="infoCard">
 
-            <div class="infoIcon">
+                    <div class="infoIcon">
 
-                🔒
+                        🔒
 
-            </div>
+                    </div>
 
-            <div>
+                    <div>
 
-                <h3>
+                        <h3>
 
-                    Seguridad
+                            Seguridad
 
-                </h3>
+                        </h3>
 
-                <p>
+                        <p>
 
-                    Tu información financiera está protegida y se procesa de forma segura.
+                            Tu información financiera está protegida y se procesa de forma segura.
 
-                </p>
+                        </p>
 
-            </div>
+                    </div>
 
-        </div>
+                </div>
 
-        <div class="infoCard">
+                <div class="infoCard">
 
-            <div class="infoIcon">
+                    <div class="infoIcon">
 
-                ⚡
+                        ⚡
 
-            </div>
+                    </div>
 
-            <div>
+                    <div>
 
-                <h3>
+                        <h3>
 
-                    Respuesta inmediata
+                            Respuesta inmediata
 
-                </h3>
+                        </h3>
 
-                <p>
+                        <p>
 
-                    Obtén una simulación del crédito en pocos segundos.
+                            Obtén una simulación del crédito en pocos segundos.
 
-                </p>
+                        </p>
 
-            </div>
+                    </div>
 
-        </div>
+                </div>
 
-        <div class="infoCard">
+                <div class="infoCard">
 
-            <div class="infoIcon">
+                    <div class="infoIcon">
 
-                🤝
+                        🤝
 
-            </div>
+                    </div>
 
-            <div>
+                    <div>
 
-                <h3>
+                        <h3>
 
-                    Atención personalizada
+                            Atención personalizada
 
-                </h3>
+                        </h3>
 
-                <p>
+                        <p>
 
-                    Calculamos una propuesta basada en tu capacidad de pago.
+                            Calculamos una propuesta basada en tu capacidad de pago.
 
-                </p>
+                        </p>
 
-            </div>
+                    </div>
 
-        </div>
+                </div>
 
-    </section>
+            </section>
 
-    <!--==================================
+            <!--==================================
                 BOTONES
     ===================================-->
 
-    <div class="buttons">
+            <div class="buttons">
 
-        <button
-            id="btnCalcularCredito"
-            class="btnPrincipal"
-            onclick="calcular();">
+                <button id="btnCalcularCredito" class="btnPrincipal" onclick="calcular();">
 
-            <span class="btnIcono">💳</span>
+                    <span class="btnIcono">💳</span>
 
-            <span>
+                    <span>
 
-                Calcular Crédito
+                        Calcular Crédito
 
-            </span>
+                    </span>
 
-        </button>
+                </button>
 
-        <button
-            id="btnReiniciar"
-            class="btnSecundario">
+                <button id="btnReiniciar" class="btnSecundario">
 
-            <span class="btnIcono">↺</span>
+                    <span class="btnIcono">↺</span>
 
-            <span>
+                    <span>
 
-                Reiniciar
+                        Reiniciar
 
-            </span>
+                    </span>
 
-        </button>
+                </button>
 
-    </div>
+            </div>
 
-    <!--==================================
+            <!--==================================
           MENSAJE INFERIOR
     ===================================-->
 
-    <section class="mensajeFinal">
+            <section class="mensajeFinal">
 
-        <div class="mensajeIcono">
+                <div class="mensajeIcono">
 
-            💙
+                    💙
 
-        </div>
+                </div>
 
-        <div>
+                <div>
 
-            <h3>
+                    <h3>
 
-                Estamos para ayudarte
+                        Estamos para ayudarte
 
-            </h3>
+                    </h3>
 
-            <p>
+                    <p>
 
-                Simula tu crédito antes de tomar una decisión y encuentra la mejor opción para tu futuro financiero.
+                        Simula tu crédito antes de tomar una decisión y encuentra la mejor opción para tu futuro
+                        financiero.
 
-            </p>
+                    </p>
 
-        </div>
+                </div>
 
-    </section>
-        <!--==================================
+            </section>
+            <!--==================================
                 FOOTER
     ===================================-->
 
-    <footer class="footer">
+            <footer class="footer">
 
-        <div class="footerLogo">
+                <div class="footerLogo">
 
-            <img
-                src="entidadFinanciera.jpg"
-                alt="Logo Financiera">
+                    <img src="entidadFinanciera.jpg" alt="Logo Financiera">
 
-        </div>
+                </div>
 
-        <div class="footerInfo">
+                <div class="footerInfo">
 
-            <h3>
+                    <h3>
 
-                Simulador de Crédito
+                        Simulador de Crédito
 
-            </h3>
+                    </h3>
 
-            <p>
+                    <p>
 
-                Herramienta diseñada para calcular la capacidad de pago y estimar el valor de un préstamo de manera rápida y sencilla.
+                        Herramienta diseñada para calcular la capacidad de pago y estimar el valor de un préstamo de
+                        manera rápida y sencilla.
 
-            </p>
+                    </p>
 
-        </div>
+                </div>
 
-    </footer>
+            </footer>
 
-</div>
+    </div>
 
 </body>
 

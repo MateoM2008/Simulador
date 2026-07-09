@@ -1274,3 +1274,11 @@ input{
 /*==========================================
         FIN DEL CSS
 ==========================================*/
+
+.mensajeError{
+    display:block;
+    color:red;
+    font-style:italic;
+    font-size:13px;
+    margin-top:3px;
+}
